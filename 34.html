@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DidiShop</title>
+  <link rel="stylesheet" href="34.css" />
+</head>
+<body>
+    <!-- Бренд и быстрый скролл -->
+    <a class="chip2" href="#sales">
+      <h2 class="ds">
+        <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22128%22%20height%3D%22128%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ff6a00%22%3E%3C%2Fstop%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ff9a3c%22%3E%3C%2Fstop%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Ccircle%20cx%3D%22128%22%20cy%3D%22128%22%20r%3D%22120%22%20fill%3D%22url(%23g)%22%3E%3C%2Fcircle%3E%0A%20%20%3Cg%20fill%3D%22%23ffffff%22%20font-family%3D%22Inter%2C%20system-ui%2C%20-apple-system%2C%20'Segoe%20UI'%2C%20Roboto%2C%20Arial%22%20font-weight%3D%22800%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Ctext%20x%3D%22128%22%20y%3D%22156%22%20font-size%3D%2296%22%20letter-spacing%3D%222%22%3EDS%3C%2Ftext%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A" alt="DidiShop" class="brand-mark">Didishop
+      </h2>
+    </a>
+    <a class="chip3" href="#sales"><div class="chipbody">↑</div></a>
+
+  <div class="searchbar" role="search">
+    <div class="searchbar__icon">🔎</div>
+    <input class="searchbar__input" type="text" placeholder="Быстрый переход… (выберите подсказку ниже)" aria-label="Поиск по разделам и товарам" />
+    <details class="searchbar__details">
+      <summary>Подсказки</summary>
+      <!-- содержимое подсказок-->
+      <div class="chips">
+        <span class="chips__title">Разделы:</span>
+        <a class="chip" href="#sales">Скидки</a>
+        <a class="chip" href="#milk">Молочка</a>
+        <a class="chip" href="#meat">Мясо</a>
+        <a class="chip" href="#sweet">Сладкое</a>
+        <a class="chip" href="#bakery">Выпечка</a>
+        <a class="chip" href="#fruits">Фрукты и овощи</a>
+        <a class="chip" href="#drinks">Напитки</a>
+        <a class="chip" href="#chem">Бытовая химия</a>
+        <a class="chip" href="#frozen">Заморозка</a>
+      </div>
+      <div class="chips">
+        <span class="chips__title">Товары:</span>
+        <a class="chip" href="#sale-chocolate">Шоколад Alpen Gold</a>
+        <a class="chip" href="#sale-smetana-20">Сметана 20%</a>
+        <a class="chip" href="#sale-beef">Говядина кг</a>
+        <a class="chip" href="#sale-yogurt">Йогурт клубничный</a>
+        <a class="chip" href="#sale-cola-1l">Coca-Cola 1 л</a>
+        <a class="chip" href="#milk-milk-1l">Молоко 1 л</a>
+        <a class="chip" href="#milk-smetana-20">Сметана 20%</a>
+        <a class="chip" href="#milk-cheese">Сыр</a>
+        <a class="chip" href="#milk-yogurt">Йогурт</a>
+        <a class="chip" href="#milk-kefir">Кефир</a>
+      </div>
+    </details>
+  </div>
+
+
+
+
+  <!-- Боковое меню -->
+  <input type="checkbox" id="toggle-sidebar">
+  <label for="toggle-sidebar" class="menu-btn">📂</label>
+  <aside class="sidebar">
+    <h2>Каталог</h2>
+    <ul>
+      <li><a href="#sales">Скидки</a></li>
+      <li><a href="#milk">Молочка</a></li>
+      <li><a href="#meat">Мясо</a></li>
+      <li><a href="#sweet">Сладкое</a></li>
+      <li><a href="#bakery">Выпечка</a></li>
+      <li><a href="#fruits">Фрукты и овощи</a></li>
+      <li><a href="#drinks">Напитки</a></li>
+      <li><a href="#chem">Бытовая химия</a></li>
+      <li><a href="#frozen">Заморозка</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </aside>
+
+  <!-- Корзина -->
+  <input type="checkbox" id="toggle-cart">
+  <label for="toggle-cart" class="menu-btn">🛒</label>
+  <aside class="cart">
+    <h3>Корзина</h3>
+    <div class="empty-cart"></div>
+
+    <label for="toggle-1" class="cart-item-info" style="cursor:pointer;">
+      <div class="cart-item-img">
+        <img class="imgkor" src="https://avatars.mds.yandex.net/i?id=e3cfede432b1706efe86a3bcf41b501a3a94ffc9-12304319-images-thumbs&n=13 " alt="s1">
+      </div>
+      <h4 class="title">Шоколад Alpen Gold</h4>
+      <div class=""><div class="price">850₸</div><div class="old-price">950₸</div></div>
+      <span class="remove-btn" style="margin-left:8px;">✖</span>
+    </label>
+  </aside>
+
+  <!--  Секция: Скидки- -->
+  <section class="section scroll-target" id="sales" aria-label="Скидки и акции">
+    <div class="header">
+      <h2><span class="logo">%</span> Скидки и акции</h2>
+      <button class="meta add-btn">Все ➜</button>
+    </div>
+
+    <div class="carousel"><div class="track">
+
+      <!-- 1) Шоколад Alpen Gold -->
+      <input type="checkbox" id="toggle-1" />
+      <label for="toggle-1" class="card" id="sale-chocolate">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=e3cfede432b1706efe86a3bcf41b501a3a94ffc9-12304319-images-thumbs&n=13" alt="Шоколад Alpen Gold" /></div>
+        <div class="price-row"><div class="price">850₸</div><div class="old-price">950₸</div></div>
+        <h3 class="title">Шоколад Alpen Gold</h3>
+        <button class="add-to-cart-button" data-title="s1" data-price="850₸" data-img="https://via.placeholder.com/120"> +</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-1" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=e3cfede432b1706efe86a3bcf41b501a3a94ffc9-12304319-images-thumbs&n=13" alt="Шоколад">
+            <div class="info">
+              <h2>Шоколад Alpen Gold</h2>
+              <div class="price-2"><p class="price">850₸</p><p class="old-price">950₸</p></div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2) Сметана 20% -->
+      <input type="checkbox" id="toggle-2" />
+      <label for="toggle-2" class="card" id="sale-smetana-20">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=87c8223fc98cf65735f97ac7545a55bf0dee4134-4248551-images-thumbs&n=13" alt="Сметана 20%" ></div>
+        <div class="price-row"><div class="price">720₸</div><div class="old-price">850₸</div></div>
+        <h3 class="title">Сметана 20%</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-2" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=87c8223fc98cf65735f97ac7545a55bf0dee4134-4248551-images-thumbs&n=13" alt="Сметана">
+            <div class="info">
+              <h2>Сметана 20%</h2>
+              <div class="price-2"><p class="price">720₸</p><p class="old-price">850₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3) Говядина кг -->
+      <input type="checkbox" id="toggle-3" />
+      <label for="toggle-3" class="card" id="sale-beef">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=39a37f9f535add19d8ab35aed6b68c45245cf7d0-12476725-images-thumbs&n=13" alt="Говядина кг"></div>
+        <div class="price-row"><div class="price">2300₸</div><div class="old-price">2600₸</div></div>
+        <h3 class="title">Говядина кг</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-3" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=39a37f9f535add19d8ab35aed6b68c45245cf7d0-12476725-images-thumbs&n=13" alt="Говядина">
+            <div class="info">
+              <h2>Говядина кг</h2>
+              <div class="price-2"><p class="price">2300₸</p><p class="old-price">2600₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4) Йогурт клубничный -->
+      <input type="checkbox" id="toggle-4" />
+      <label for="toggle-4" class="card" id="sale-yogurt">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=56f44fd09b15a385b77bad9bc63e4458e1d3b811-12496607-images-thumbs&n=13" alt="Йогурт клубничный" /></div>
+        <div class="price-row"><div class="price">300₸</div><div class="old-price">350₸</div></div>
+        <h3 class="title">Йогурт клубничный</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-4" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=56f44fd09b15a385b77bad9bc63e4458e1d3b811-12496607-images-thumbs&n=13" alt="Йогурт">
+            <div class="info">
+              <h2>Йогурт клубничный</h2>
+              <div class="price-2"><p class="price">300₸</p><p class="old-price">350₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5) Coca-Cola 1 л -->
+      <input type="checkbox" id="toggle-5" />
+      <label for="toggle-5" class="card" id="sale-cola-1l">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=1bdeda7e55e47672500780aadf458f534255e0f4-16400988-images-thumbs&n=13" alt="Coca-Cola 1 л" /></div>
+        <div class="price-row"><div class="price">626₸</div><div class="old-price">774₸</div></div>
+        <h3 class="title">Coca-Cola 1 л</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-5" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=1bdeda7e55e47672500780aadf458f534255e0f4-16400988-images-thumbs&n=13" alt="Coca-Cola">
+            <div class="info">
+              <h2>Coca-Cola 1 л</h2>
+              <div class="price-2"><p class="price">626₸</p><p class="old-price">774₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+  <!-- ------------------ Секция: Молочка ------------------ -->
+  <section class="section scroll-target" id="milk" aria-label="Молочная продукция">
+    <div class="header"><h2>🥛 Молочная продукция</h2><button class="meta add-btn">Все ➜</button></div>
+    <div class="carousel"><div class="track">
+
+      <!-- 6) Молоко 1 л -->
+      <input type="checkbox" id="toggle-6" />
+      <label for="toggle-6" class="card" id="milk-milk-1l">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=8ed6aad011be8a1260b8e878c656685d3a710371-16321400-images-thumbs&n=13" alt="Молоко 1 л" /></div>
+        <div class="price-row"><div class="price">450₸</div></div>
+        <h3 class="title">Молоко 1 л</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-6" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=8ed6aad011be8a1260b8e878c656685d3a710371-16321400-images-thumbs&n=13" alt="Молоко">
+            <div class="info">
+              <h2>Молоко 1 л</h2>
+              <div class="price-2"><p class="price">450₸</p><p class="old-price"></p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7) Сметана 20%  -->
+      <input type="checkbox" id="toggle-7" />
+      <label for="toggle-7" class="card" id="milk-smetana-20">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=87c8223fc98cf65735f97ac7545a55bf0dee4134-4248551-images-thumbs&n=13" alt="Сметана 20%" /></div>
+        <div class="price-row"><div class="price">720₸</div></div>
+        <h3 class="title">Сметана 20%</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-7" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=87c8223fc98cf65735f97ac7545a55bf0dee4134-4248551-images-thumbs&n=13" alt="Сметана">
+            <div class="info">
+              <h2>Сметана 20%</h2>
+              <div class="price-2"><p class="price">720₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8) Сыр -->
+      <input type="checkbox" id="toggle-8" />
+      <label for="toggle-8" class="card" id="milk-cheese">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=9449728a0e53700155a77df8317461f3f1614294-16401366-images-thumbs&n=13" alt="Сыр" /></div>
+        <div class="price-row"><div class="price">1200₸</div></div>
+        <h3 class="title">Сыр</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-8" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=9449728a0e53700155a77df8317461f3f1614294-16401366-images-thumbs&n=13" alt="Сыр">
+            <div class="info">
+              <h2>Сыр</h2>
+              <div class="price-2"><p class="price">1200₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9) Йогурт -->
+      <input type="checkbox" id="toggle-9" />
+      <label for="toggle-9" class="card" id="milk-yogurt">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=585e06e3ce14688bdaa2cefa48e1e7e9d7ec3920-4347005-images-thumbs&n=13" alt="Йогурт" /></div>
+        <div class="price-row"><div class="price">300₸</div></div>
+        <h3 class="title">Йогурт</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-9" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=585e06e3ce14688bdaa2cefa48e1e7e9d7ec3920-4347005-images-thumbs&n=13" alt="Йогурт">
+            <div class="info">
+              <h2>Йогурт</h2>
+              <div class="price-2"><p class="price">300₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10) Кефир  -->
+      <input type="checkbox" id="toggle-10" />
+      <label for="toggle-10" class="card" id="milk-kefir">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=c755b3cd7c513242d4007493f9daf52a5fb8e413-5656606-images-thumbs&n=13" alt="Кефир" /></div>
+        <div class="price-row"><div class="price">500₸</div></div>
+        <h3 class="title">Кефир</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-10" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=c755b3cd7c513242d4007493f9daf52a5fb8e413-5656606-images-thumbs&n=13" alt="Кефир">
+            <div class="info">
+              <h2>Кефир</h2>
+              <div class="price-2"><p class="price">500₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+  <!-- ------------------ Секция: Мясо ------------------ -->
+  <section class="section scroll-target" id="meat" aria-label="Мясо">
+    <div class="header"><h2>🥩 Мясо</h2><button class="meta add-btn">Все ➜</button></div>
+    <div class="carousel"><div class="track">
+
+      <!-- 11) Говядина кг  -->
+      <input type="checkbox" id="toggle-11" />
+      <label for="toggle-11" class="card" id="meat-beef">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=39a37f9f535add19d8ab35aed6b68c45245cf7d0-12476725-images-thumbs&n=13" alt="Говядина кг" /></div>
+        <div class="price-row"><div class="price">2300₸</div><div class="old-price">2600₸</div></div>
+        <h3 class="title">Говядина кг</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-11" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=39a37f9f535add19d8ab35aed6b68c45245cf7d0-12476725-images-thumbs&n=13" alt="Говядина">
+            <div class="info">
+              <h2>Говядина кг</h2>
+              <div class="price-2"><p class="price">2300₸</p><p class="old-price">2600₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12) Курица кг -->
+      <input type="checkbox" id="toggle-12" />
+      <label for="toggle-12" class="card" id="meat-chicken">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=b080080a6e188bf41380b44956858402bffadfde-4776319-images-thumbs&n=13" alt="Курица кг" /></div>
+        <div class="price-row"><div class="price">1500₸</div></div>
+        <h3 class="title">Курица кг</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-12" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=b080080a6e188bf41380b44956858402bffadfde-4776319-images-thumbs&n=13" alt="Курица">
+            <div class="info">
+              <h2>Курица кг</h2>
+              <div class="price-2"><p class="price">1500₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13) Свинина кг -->
+      <input type="checkbox" id="toggle-13" />
+      <label for="toggle-13" class="card" id="meat-pork">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=920690da35cf105d483042e070c6a83a8e05b699-2427501-images-thumbs&n=13" alt="Свинина кг" /></div>
+        <div class="price-row"><div class="price">2200₸</div></div>
+        <h3 class="title">Свинина кг</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-13" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=920690da35cf105d483042e070c6a83a8e05b699-2427501-images-thumbs&n=13" alt="Свинина">
+            <div class="info">
+              <h2>Свинина кг</h2>
+              <div class="price-2"><p class="price">2200₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14) Фарш -->
+      <input type="checkbox" id="toggle-14" />
+      <label for="toggle-14" class="card" id="meat-mince">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=43326031ba47bea23a64a528ebdfe5c25f8e65d0-5243437-images-thumbs&n=13" alt="Фарш" /></div>
+        <div class="price-row"><div class="price">2000₸</div></div>
+        <h3 class="title">Фарш</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-14" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=43326031ba47bea23a64a528ebdfe5c25f8e65d0-5243437-images-thumbs&n=13" alt="Фарш">
+            <div class="info">
+              <h2>Фарш</h2>
+              <div class="price-2"><p class="price">2000₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15) Колбаса -->
+      <input type="checkbox" id="toggle-15" />
+      <label for="toggle-15" class="card" id="meat-sausage">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=c0e2995a31cb8842d3eead7bd3c4b99191ded136-5100571-images-thumbs&n=13" alt="Колбаса" /></div>
+        <div class="price-row"><div class="price">1800₸</div></div>
+        <h3 class="title">Колбаса</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-15" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=c0e2995a31cb8842d3eead7bd3c4b99191ded136-5100571-images-thumbs&n=13" alt="Колбаса">
+            <div class="info">
+              <h2>Колбаса</h2>
+              <div class="price-2"><p class="price">1800₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+  <!-- ------------------ Секция: Сладости ------------------ -->
+  <section class="section scroll-target" id="sweet" aria-label="Сладости">
+    <div class="header"><h2>🍫 Сладости</h2><button class="meta add-btn">Все ➜</button></div>
+    <div class="carousel"><div class="track">
+
+      <!-- 16) Alpen Gold  -->
+      <input type="checkbox" id="toggle-16" />
+      <label for="toggle-16" class="card" id="sweet-chocolate">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=e3cfede432b1706efe86a3bcf41b501a3a94ffc9-12304319-images-thumbs&n=13" alt="Шоколад Alpen Gold" /></div>
+        <div class="price-row"><div class="price">850₸</div><div class="old-price">950₸</div></div>
+        <h3 class="title">Шоколад Alpen Gold</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-16" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=e3cfede432b1706efe86a3bcf41b501a3a94ffc9-12304319-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Шоколад Alpen Gold</h2>
+              <div class="price-2"><p class="price">850₸</p>
+                <p class="old-price">950₸</p></div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17) Oreo -->
+      <input type="checkbox" id="toggle-17" />
+      <label for="toggle-17" class="card" id="sweet-oreo">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=07463658df046d9df193661ca6a8c9a6dfccc0c2-5680151-images-thumbs&n=13" alt="Печенье Oreo" /></div>
+        <div class="price-row"><div class="price">600₸</div></div>
+        <h3 class="title">Печенье Oreo</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-17" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=07463658df046d9df193661ca6a8c9a6dfccc0c2-5680151-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Печенье Oreo</h2>
+              <div class="price-2"><p class="price">600₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18) Кекс -->
+      <input type="checkbox" id="toggle-18" />
+      <label for="toggle-18" class="card" id="sweet-cupcake">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=1c713c9c48457cf9cc0f33c3625402ab56a6f668-5879175-images-thumbs&n=13" alt="Кекс шоколадный" /></div>
+        <div class="price-row"><div class="price">700₸</div></div>
+        <h3 class="title">Кекс шоколадный</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-18" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=1c713c9c48457cf9cc0f33c3625402ab56a6f668-5879175-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Кекс шоколадный</h2>
+              <div class="price-2"><p class="price">700₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19) Мороженое -->
+      <input type="checkbox" id="toggle-19" />
+      <label for="toggle-19" class="card" id="sweet-icecream">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=2857c295e5bcf06099518edbc3d304f5609799ae864a8c16-11924504-images-thumbs&n=13" alt="Мороженое" /></div>
+        <div class="price-row"><div class="price">500₸</div></div>
+        <h3 class="title">Мороженое</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-19" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=2857c295e5bcf06099518edbc3d304f5609799ae864a8c16-11924504-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Мороженое</h2>
+              <div class="price-2"><p class="price">500₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20) Карамель -->
+      <input type="checkbox" id="toggle-20" />
+      <label for="toggle-20" class="card" id="sweet-caramel">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=b99f8567d05332c069079203712b32f6e43428aa-5585452-images-thumbs&n=13" alt="Карамель" /></div>
+        <div class="price-row"><div class="price">300₸</div></div>
+        <h3 class="title">Карамель</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-20" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=b99f8567d05332c069079203712b32f6e43428aa-5585452-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Карамель</h2>
+              <div class="price-2"><p class="price">300₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+  <!-- -- Секция: Выпечка -->
+  <section class="section scroll-target" id="bakery" aria-label="Выпечка">
+    <div class="header"><h2>🥐 Выпечка</h2><button class="meta add-btn">Все ➜</button></div>
+    <div class="carousel"><div class="track">
+
+      <!-- 21) Круассан -->
+      <input type="checkbox" id="toggle-21" />
+      <label for="toggle-21" class="card" id="bakery-croissant">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=f362db298b48abff1525aaa9d663b1196c1c1d28-5663910-images-thumbs&n=13" alt="Круассан" /></div>
+        <div class="price-row"><div class="price">500₸</div></div>
+        <h3 class="title">Круассан</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-21" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=f362db298b48abff1525aaa9d663b1196c1c1d28-5663910-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Круассан</h2>
+              <div class="price-2"><p class="price">500₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 22) Булочка -->
+      <input type="checkbox" id="toggle-22" />
+      <label for="toggle-22" class="card" id="bakery-bun">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=7ddbbe150a445b5ebfd000c522ec66860b5320ca-4876380-images-thumbs&n=13" alt="Булочка" /></div>
+        <div class="price-row"><div class="price">400₸</div></div>
+        <h3 class="title">Булочка</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-22" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=7ddbbe150a445b5ebfd000c522ec66860b5320ca-4876380-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Булочка</h2>
+              <div class="price-2"><p class="price">400₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 23) Пирожок -->
+      <input type="checkbox" id="toggle-23" />
+      <label for="toggle-23" class="card" id="bakery-pirozhok">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=e1b8421b6abff88c31aaa087ae6e7ba0726e7ab4-5906867-images-thumbs&n=13" alt="Пирожок" /></div>
+        <div class="price-row"><div class="price">600₸</div></div>
+        <h3 class="title">Пирожок</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-23" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=e1b8421b6abff88c31aaa087ae6e7ba0726e7ab4-5906867-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Пирожок</h2>
+              <div class="price-2"><p class="price">600₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 24) Багет -->
+      <input type="checkbox" id="toggle-24" />
+      <label for="toggle-24" class="card" id="bakery-baguette">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=99c5c5dffb7b250b258fc1109575efbdf4052f06-9173887-images-thumbs&n=13" alt="Багет" /></div>
+        <div class="price-row"><div class="price">700₸</div></div>
+        <h3 class="title">Багет</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-24" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=99c5c5dffb7b250b258fc1109575efbdf4052f06-9173887-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Багет</h2>
+              <div class="price-2"><p class="price">700₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 25) Плюшка -->
+      <input type="checkbox" id="toggle-25" />
+      <label for="toggle-25" class="card" id="bakery-plushka">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=baffbba25d4125ab0b220d0bcde8d78bffdc1b3e-12532894-images-thumbs&n=13" alt="Плюшка" /></div>
+        <div class="price-row"><div class="price">800₸</div></div>
+        <h3 class="title">Плюшка</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-25" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=baffbba25d4125ab0b220d0bcde8d78bffdc1b3e-12532894-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Плюшка</h2>
+              <div class="price-2"><p class="price">800₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+  <!-- ------------- Секция: Фрукты и овощи --------- -->
+  <section class="section scroll-target" id="fruits" aria-label="Фрукты и овощи">
+    <div class="header"><h2>🍎 Фрукты и овощи</h2><button class="meta add-btn">Все ➜</button></div>
+    <div class="carousel"><div class="track">
+
+      <!-- 26) Яблоки -->
+      <input type="checkbox" id="toggle-26" />
+      <label for="toggle-26" class="card" id="fruits-apples">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=8d4f6c04d899aab56c0a47b36dfb8e88eb9c7116-4571989-images-thumbs&n=13" alt="Яблоки кг" /></div>
+        <div class="price-row"><div class="price">500₸</div></div>
+        <h3 class="title">Яблоки кг</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-26" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=8d4f6c04d899aab56c0a47b36dfb8e88eb9c7116-4571989-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Яблоки кг</h2>
+              <div class="price-2"><p class="price">500₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 27) Бананы -->
+      <input type="checkbox" id="toggle-27" />
+      <label for="toggle-27" class="card" id="fruits-bananas">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=3f1d0af84204ba42af6c46dca5e1319a35218795-5232437-images-thumbs&n=13" alt="Бананы кг" /></div>
+        <div class="price-row"><div class="price">700₸</div></div>
+        <h3 class="title">Бананы кг</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-27" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=3f1d0af84204ba42af6c46dca5e1319a35218795-5232437-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Бананы кг</h2>
+              <div class="price-2"><p class="price">700₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 28) Апельсины -->
+      <input type="checkbox" id="toggle-28" />
+      <label for="toggle-28" class="card" id="fruits-oranges">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=01711b2264c89dea47c30b2b2f0b24a7b210c509-12539768-images-thumbs&n=13" alt="Апельсины кг" /></div>
+        <div class="price-row"><div class="price">600₸</div></div>
+        <h3 class="title">Апельсины кг</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-28" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=01711b2264c89dea47c30b2b2f0b24a7b210c509-12539768-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Апельсины кг</h2>
+              <div class="price-2"><p class="price">600₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 29) Помидоры -->
+      <input type="checkbox" id="toggle-29" />
+      <label for="toggle-29" class="card" id="fruits-tomatoes">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=a095b2d3c7d22dedea7b7e9f32024629e92cad9d-13081675-images-thumbs&n=13" alt="Помидоры кг" /></div>
+        <div class="price-row"><div class="price">300₸</div></div>
+        <h3 class="title">Помидоры кг</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-29" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=a095b2d3c7d22dedea7b7e9f32024629e92cad9d-13081675-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Помидоры кг</h2>
+              <div class="price-2"><p class="price">300₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 30) Огурцы -->
+      <input type="checkbox" id="toggle-30" />
+      <label for="toggle-30" class="card" id="fruits-cucumbers">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=c214a3320c7de464b5f4aabf27126db80eb15658-12496051-images-thumbs&n=13" alt="Огурцы кг" /></div>
+        <div class="price-row"><div class="price">400₸</div></div>
+        <h3 class="title">Огурцы кг</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-30" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=c214a3320c7de464b5f4aabf27126db80eb15658-12496051-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Огурцы кг</h2>
+              <div class="price-2"><p class="price">400₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+  <!-- ----- Секция: Напитки ------- -->
+  <section class="section scroll-target" id="drinks" aria-label="Напитки">
+    <div class="header"><h2>🥤 Напитки</h2><button class="meta add-btn">Все ➜</button></div>
+    <div class="carousel"><div class="track">
+
+      <!-- 31) Минеральная вода -->
+      <input type="checkbox" id="toggle-31" />
+      <label for="toggle-31" class="card" id="drinks-water">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=9d6c1c5cbbd3df5cb97a0b8b060707021995e2c0-13095555-images-thumbs&n=13" alt="Минеральная вода" /></div>
+        <div class="price-row"><div class="price">450₸</div></div>
+        <h3 class="title">Минеральная вода</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-31" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=9d6c1c5cbbd3df5cb97a0b8b060707021995e2c0-13095555-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Минеральная вода</h2>
+              <div class="price-2"><p class="price">450₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 32) Сок яблочный -->
+      <input type="checkbox" id="toggle-32" />
+      <label for="toggle-32" class="card" id="drinks-juice">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=d887237addf578643e6f05a742f3cdd937406279-9813974-images-thumbs&n=13" alt="Сок яблочный" /></div>
+        <div class="price-row"><div class="price">600₸</div></div>
+        <h3 class="title">Сок яблочный</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-32" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=d887237addf578643e6f05a742f3cdd937406279-9813974-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Сок яблочный</h2>
+              <div class="price-2"><p class="price">600₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 33) Кола 2,5 л -->
+      <input type="checkbox" id="toggle-33" />
+      <label for="toggle-33" class="card" id="drinks-cola-2l">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=d25a7328173913086fc6402939104b092ef96b7e-9051244-images-thumbs&n=13" alt="Кола 2 л" /></div>
+        <div class="price-row"><div class="price">800₸</div></div>
+        <h3 class="title">Кола 2,5 л</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-33" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=d25a7328173913086fc6402939104b092ef96b7e-9051244-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Кола 2,5 л</h2>
+              <div class="price-2"><p class="price">800₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 34) Чай холодный -->
+      <input type="checkbox" id="toggle-34" />
+      <label for="toggle-34" class="card" id="drinks-iced-tea">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=f2e6d4e3a9ad0f638897b30050dd26d9d5043ba7-2352943-images-thumbs&n=13" alt="Чай холодный" /></div>
+        <div class="price-row"><div class="price">550₸</div></div>
+        <h3 class="title">Чай холодный</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-34" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=f2e6d4e3a9ad0f638897b30050dd26d9d5043ba7-2352943-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Чай холодный</h2>
+              <div class="price-2"><p class="price">550₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 35) Энергетик -->
+      <input type="checkbox" id="toggle-35" />
+      <label for="toggle-35" class="card" id="drinks-energy">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=9389c9af934995aaec46d62bb036406bc6d87982-5236483-images-thumbs&n=13" alt="Энергетик" /></div>
+        <div class="price-row"><div class="price">700₸</div></div>
+        <h3 class="title">Энергетик</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-35" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=9389c9af934995aaec46d62bb036406bc6d87982-5236483-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Энергетик</h2>
+              <div class="price-2"><p class="price">700₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+  <!-- -------- Секция: Бытовая химия ------ -->
+  <section class="section scroll-target" id="chem" aria-label="Бытовая химия">
+    <div class="header"><h2>🧼 Бытовая химия</h2><button class="meta add-btn">Все ➜</button></div>
+    <div class="carousel"><div class="track">
+
+      <!-- 36) Стиральный порошок -->
+      <input type="checkbox" id="toggle-36" />
+      <label for="toggle-36" class="card" id="chem-powder">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=7e45442331ec713f2529b7118712435853b1219e-5342042-images-thumbs&n=13" alt="Стиральный порошок" /></div>
+        <div class="price-row"><div class="price">1200₸</div></div>
+        <h3 class="title">Стиральный порошок</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-36" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=7e45442331ec713f2529b7118712435853b1219e-5342042-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Стиральный порошок</h2>
+              <div class="price-2"><p class="price">1200₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 37) Мыло жидкое -->
+      <input type="checkbox" id="toggle-37" />
+      <label for="toggle-37" class="card" id="chem-soap">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=29a7a3cf42f518ba55acc148c40175ced603f3ed-4571964-images-thumbs&n=13" alt="Мыло жидкое" /></div>
+        <div class="price-row"><div class="price">800₸</div></div>
+        <h3 class="title">Мыло жидкое</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-37" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=29a7a3cf42f518ba55acc148c40175ced603f3ed-4571964-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Мыло жидкое</h2>
+              <div class="price-2"><p class="price">800₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 38) Губки -->
+      <input type="checkbox" id="toggle-38" />
+      <label for="toggle-38" class="card" id="chem-sponges">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=d3f411f2cb3239e3baeea88ad38026e93185b851-5519673-images-thumbs&n=13" alt="Губки" /></div>
+        <div class="price-row"><div class="price">500₸</div></div>
+        <h3 class="title">Губки</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-38" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=d3f411f2cb3239e3baeea88ad38026e93185b851-5519673-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Губки</h2>
+              <div class="price-2"><p class="price">500₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 39) Кондиционер для белья -->
+      <input type="checkbox" id="toggle-39" />
+      <label for="toggle-39" class="card" id="chem-softener">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=2824428f8a666e8ec3bffb716663b2ce9fce538a-5314480-images-thumbs&n=13" alt="Кондиционер для белья" /></div>
+        <div class="price-row"><div class="price">1500₸</div></div>
+        <h3 class="title">Кондиционер для белья</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-39" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=2824428f8a666e8ec3bffb716663b2ce9fce538a-5314480-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Кондиционер для белья</h2>
+              <div class="price-2"><p class="price">1500₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 40) Чистящее средство -->
+      <input type="checkbox" id="toggle-40" />
+      <label for="toggle-40" class="card" id="chem-cleaner">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=a0f5522e02a03c917fcb1e348536c04ca0432663-3689974-images-thumbs&n=13" alt="Чистящее средство" /></div>
+        <div class="price-row"><div class="price">900₸</div></div>
+        <h3 class="title">Чистящее средство</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-40" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=a0f5522e02a03c917fcb1e348536c04ca0432663-3689974-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Чистящее средство</h2>
+              <div class="price-2"><p class="price">900₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+  <!-- ----- Секция: Заморозка ---- -->
+  <section class="section scroll-target" id="frozen" aria-label="Заморозка">
+    <div class="header"><h2>❄ Заморозка</h2><button class="meta add-btn ">Все ➜</button></div>
+    <div class="carousel"><div class="track">
+
+      <!-- 41) Пельмени -->
+      <input type="checkbox" id="toggle-41" />
+      <label for="toggle-41" class="card" id="frozen-dumplings">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=669f2244de9efec5487ea918e6430243cb199df1-5312571-images-thumbs&n=13" alt="Пельмени" /></div>
+        <div class="price-row"><div class="price">1200₸</div></div>
+        <h3 class="title">Пельмени</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-41" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=669f2244de9efec5487ea918e6430243cb199df1-5312571-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Пельмени</h2>
+              <div class="price-2"><p class="price">1200₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 42) Вареники -->
+      <input type="checkbox" id="toggle-42" />
+      <label for="toggle-42" class="card" id="frozen-vareniki">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=45769215617b6bcdac6ee15d4bcfa71640d05526-5232623-images-thumbs&n=13" alt="Вареники" /></div>
+        <div class="price-row"><div class="price">1000₸</div></div>
+        <h3 class="title">Вареники</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-42" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=45769215617b6bcdac6ee15d4bcfa71640d05526-5232623-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Вареники</h2>
+              <div class="price-2"><p class="price">1000₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 43) Овощи замороженные -->
+      <input type="checkbox" id="toggle-43" />
+      <label for="toggle-43" class="card" id="frozen-veggies">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=17e7c3d2822538585179b76195e0f448c66dde43-5679112-images-thumbs&n=13" alt="Овощи замороженные" /></div>
+        <div class="price-row"><div class="price">900₸</div></div>
+        <h3 class="title">Овощи замороженные</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-43" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=17e7c3d2822538585179b76195e0f448c66dde43-5679112-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Овощи замороженные</h2>
+              <div class="price-2"><p class="price">900₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 44) Ягоды -->
+      <input type="checkbox" id="toggle-44" />
+      <label for="toggle-44" class="card" id="frozen-berries">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=4643838c1786b87473cf6a6ad5acdfecbe47dc8f-4232421-images-thumbs&n=13" alt="Ягоды" /></div>
+        <div class="price-row"><div class="price">800₸</div></div>
+        <h3 class="title">Ягоды</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-44" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=4643838c1786b87473cf6a6ad5acdfecbe47dc8f-4232421-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Ягоды</h2>
+              <div class="price-2"><p class="price">800₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 45) Рыба -->
+      <input type="checkbox" id="toggle-45" />
+      <label for="toggle-45" class="card" id="frozen-fish">
+        <div class="img-wrap"><img src="https://avatars.mds.yandex.net/i?id=71a2bdb45678ddae1ea77c958ecc21d872ace4d8-13273717-images-thumbs&n=13" alt="Рыба" /></div>
+        <div class="price-row"><div class="price">1500₸</div></div>
+        <h3 class="title">Рыба</h3>
+        <button class="add-to-cart-button">﹢</button>
+      </label>
+      <div class="modal">
+        <div class="modal-content">
+          <label for="toggle-45" class="close">&times;</label>
+          <div class="modal-body">
+            <img class="modimg" src="https://avatars.mds.yandex.net/i?id=71a2bdb45678ddae1ea77c958ecc21d872ace4d8-13273717-images-thumbs&n=13" alt="">
+            <div class="info">
+              <h2>Рыба</h2>
+              <div class="price-2"><p class="price">1500₸</p>
+              </div>
+              <button class="add-btn">Добавить</button>
+              <button class="add-btn">Убрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+
+  <!-- Футер -->
+  <footer>
+    <ul class="footer" >
+      <li class="footer_item" id="contacts">📞 8-771-579-80-20</li>
+      <li class="footer_item"><a href="https://yandex.kz/maps/ru/221/chimkent/house/respublika_dangghyly_30/YkAYcwBmTk0EQFpofX9xeHplZA==/?ll=69.576783%2C42.309660&z=16">📍 Шымкент, пр. Республики 30</a></li>
+      <li class="footer_item">✉ didishop@gmail.com</li>
+    </ul>
+  </footer>
+
+</body>
+</html>
